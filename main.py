@@ -13,6 +13,11 @@ app.secret_key = 'learnhub'
 app.config['SQLALCHEMY_DATABASE_URI'] = SQLALCHEMY_DATABASE_URI
 db.init_app(app)
 
+#Route for home
+@app.route('/')
+def home():
+    return render_template('html/home.html')
+
 # Routes for authentication
 
 @app.route('/signup', methods=['GET', 'POST'])
