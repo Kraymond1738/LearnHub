@@ -36,7 +36,7 @@ def signup():
 
         return redirect('/login')
 
-    return render_template('signup.html')
+    return render_template('html/signup.html')
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -56,7 +56,7 @@ def login():
             error_message = 'Invalid email or password'
             return render_template('login.html', error_message=error_message)
 
-    return render_template('login.html')
+    return render_template('html/login.html')
 
 @app.route('/logout')
 def logout():
@@ -75,7 +75,7 @@ def dashboard():
     # Retrieve the user from the database
     user = User.query.get(session['user_id'])
 
-    return render_template('dashboard.html', user=user)
+    return render_template('html/dashboard.html', user=user)
 
 # Run the application
 if __name__ == '__main__':
