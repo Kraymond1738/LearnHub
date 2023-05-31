@@ -12,7 +12,7 @@ class User(db.Model):
     first_name = db.Column(db.String(100))
     last_name = db.Column(db.String(100))
     email = db.Column(db.String(100))
-    phone_number = db.column(db.string(100))
+    phone_number = db.column(db.String(100))
     password = db.Column(db.String(6533))
     account_type = db.Column(db.Enum('Tutor', 'Student'))
     courses = db.relationship('Course', backref='tutor', lazy=True)
