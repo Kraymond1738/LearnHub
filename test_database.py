@@ -10,15 +10,15 @@ class DatabaseTestCase(unittest.TestCase):
         with app.app_context():
             db.create_all()
 
-    """def tearDown(self):
+    def tearDown(self):
         with app.app_context():
             db.session.remove()
-            db.drop_all()"""
+            db.drop_all()
 
     def test_add_user(self):
         # Create a user object
         user = User(first_name='Kasumba', last_name='Raymond', email='kasumba@yahoo.com',
-                    password='123kkwq',phone_number='+256756519001' account_type='Tutor')
+                    password='123kkwq',phone_number='+256756519001', account_type='Tutor')
 
         # Send a POST request to the signup route with user data
         response = self.app.post('/signup', data=user.__dict__)

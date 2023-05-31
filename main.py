@@ -27,6 +27,7 @@ def signup():
         last_name = request.form['last_name']
         email = request.form['email']
         password = request.form['password']
+        phone_number = request.form['phone_number']
         account_type = request.form['account_type']
 
         # Hash the password before storing it in the database
@@ -34,7 +35,7 @@ def signup():
 
         # Create a new User object
         user = User(first_name=first_name, last_name=last_name, email=email,
-                    password=hashed_password, account_type=account_type)
+                    password=hashed_password, phone_number=phone_number, account_type=account_type)
 
         # Add the user to the database
         add_user(user)

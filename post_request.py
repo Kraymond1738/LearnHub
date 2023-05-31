@@ -6,7 +6,7 @@ data = {
     'last_name': 'Raymond',
     'email': 'kasumba@gmail.com',
     'password': 'katshd123',
-    'phone_number' : '+256756519001'
+    'phone_number' : '+256756519001',
     'account_type': 'Tutor'
 }
 
