@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name= "viewport" content ="width=device-width, initial-scale=1.0"> 
+    <title>Welcome to LearnHub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+</head> 
+<body>
+<section class="sub-header">
+        <nav>
+            <a href="index.html"><img src="images/learnhub_2-removebg-preview.png"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fas fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="Home.html">HOME</a></li>
+                    <li><a href="About.html">ABOUT</a></li>
+                    <li><a href="course.html">COURSE</a></li>
+                    <li><a href="Blog.html">BLOG/SERVICES</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </div>
+           <i class="fas fa-bars" onclick="showMenu()"></i>
+        </nav>
+
+    <h1>Our Certificate & Online Programs For 2023</h1>
+    
+    </section>
+    
+    <!------- Blog Page Content ------->
+    
+    <section class="blog-content">
+    
+    
+        <div class= "row">
+            <div class="blog-left">
+                <img src="images/Free-Finance-Online-Course-Certificate.jpg">
+                <h2>Our Certificate & Online Programs For 2023</h2>
+                <p>LearnHub is an esteemed online platform that offers a wide range of certificate programs designed to enhance skills and knowledge in various fields. With a diverse selection of online courses, LearnHub caters to learners of all levels, from beginners to advanced professionals.Each certificate program on LearnHub is carefully curated by experts in the respective fields, ensuring high-quality content and industry relevance. The programs cover a vast array of subjects, including business, technology, healthcare, creative arts, and more. Learners can choose programs based on their interests and career goals, allowing them to acquire valuable expertise and stay competitive in their chosen fields.</p>
+                <br>
+                <p>Through its user-friendly interface, LearnHub provides a flexible learning experience, enabling students to access the courses anytime and anywhere. The programs are designed to be interactive and engaging, incorporating a variety of learning materials, such as videos, quizzes, and practical assignments.</p>
+                <br>
+                <p>Upon successful completion of a certificate program, learners receive a recognized certificate, showcasing their newly acquired skills and knowledge. This certification from LearnHub serves as a valuable credential, validating one's expertise to employers and professional networks.Overall, LearnHub's certificate programs offer a convenient and reputable way to upskill or reskill, empowering individuals to thrive in today's rapidly evolving job market.</p>
+                
+               <div class="comment-box">
+                
+                <h3>Leave a comment</h3>
+                   
+                   <form class="comment-form">
+                       <input type="text" placeholder="Enter Name">
+                       <input type="email" placeholder="Enter Email">
+                       <textarea rows="5" placeholder="Your comment"></textarea>
+                       <button type="submit" class="hero-btn red-btn">POST COMMENT</button>
+                   </form>
+                
+                </div>
+                
+                
+            </div>
+            <div class="blog-right">
+                <h3>Courses</h3>
+                
+                <div>
+                    <span>Art & Humanities</span>
+                    <span>1</span>
+                </div>
+                
+                <div>
+                    <span>Business</span>
+                    <span>10</span>
+                </div>
+                
+                <div>
+                    <span>Sciences</span>
+                    <span>20</span>
+                </div>
+                
+                <div>
+                    <span>Data Science</span>
+                    <span>30</span>
+                </div>
+                
+                <div>
+                    <span>Machine Learning</span>
+                    <span>40</span>
+                </div>
+                
+                
+                <div>
+                    <span>AutoCAD</span>
+                    <span>50</span>
+                </div>
+                
+                <div>
+                    <span>Journalism</span>
+                    <span>60</span>
+                </div>
+            
+            </div>
+            
+        
+        </div>
+        
+    </section> 
+    
+   <!------- Footer ------->
+    
+    <section class="footer">
+        <h4>About Us</h4>
+        <p>LearnHub is an innovative course provider app that offers a wide range of educational programs to enhance your knowledge and skills. <br>With a usererface, LearnHub provides interactive courses, expert instructors, and personalized learning paths.<br>Whether you are interested in professional development, academic subjects, or hobbies, LearnHub has something for everyone.</p>
+        
+        <div class="icons">
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-linkedin"></i>
+        </div>
+        <p>Powered by <i class="fas fa-thumbs-up"></i> LearnHub Team</p>
+    
+        
+    </section> 
+      
+<!-------Javascript for Toggle Menu-------> 
+<script>
+    
+    var navLinks = document.getElementById("navLinks");
+    function showMenu(){
+        navLinks.style.right = "0"; 
+    }
+    function hideMenu(){
+        navLinks.style.right = "-200px"; 
+    }
+    
+</script>
+    
+</body>    
+</html>
