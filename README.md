@@ -1,2 +1,2 @@
 # LearnHub
-<h2> An E-learning Web Application Project <h2>
+<h2> The E-learning Web Application Project <h2>
