@@ -7,8 +7,8 @@
 .header {
     min-height: 100vh;
     width: 100%;
-    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)), url(images/learnhub1.png);
-    background-position: center;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)), url(images/learnhubbackground.jpg);
+    background-position: left;
     background-size: cover;
     position: relative;
 }
@@ -33,14 +33,14 @@ nav img{
 }
 .nav-links ul li a{
     color: #fff;
-    text-decoration: none;
+    text-decoration: thick;
     font-size: 13px;
 }
 .nav-links ul li::after{
     content: '';
     width: 0%;
     height: 2px;
-    background: #f44336;
+    background: #e6372b;
     display: block;
     margin: auto;
     transition: 0.5s;
@@ -58,14 +58,18 @@ nav img{
     text-align: center;
 }
 .text-box h1{
-    font-size: 62px;
+    font-size: 60px;
+    color: rgb(9, 107, 107);
+    text-align: center;
 }
 .text-box p{
     margin: 10px 0 40px;
     font-size: 14px;
     color: #fff;
 }       
-
+.text-box h2{
+    font-size: 16px;
+}
 .hero-btn{
     display: inline-block;
     text-decoration: none;
@@ -80,7 +84,7 @@ nav img{
 .hero-btn:hover{
     border: 1px solid #f44336;
     background: #f44336;
-    transition: 1s;
+    transition: 2s;
     }
 nav .fas{
     display: none;
@@ -117,24 +121,60 @@ nav .fas{
 
 /*------- course -------*/
 
+.sub-header1{
+    height: 50vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(images/ourcorses.jpg);
+    background-position: left;
+    text-align: center;
+    color: #fff;
+}
+.course1{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 60px;
+    min-height: 100vh;
+    width: 80%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)), url(images/courses_school.png);
+    background-position: left;
+    background-size: cover;
+    position: relative;
+}
 .course{
     width: 80%;
     margin: auto;
     text-align: center;
-    padding-top: 100px;
+    padding-top: 60px;
+    min-height: 100vh;
+    width: 80%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)), url(images/courses_offer.png);
+    background-position: left;
+    background-size: cover;
+    position: relative;
 }
 h1{
-    font-size: 36px;
+    font-size: 28px;
     font-weight: 600;
+    text-align: center;
+    color:#ffffff
 }
 p{
-    color: #777;
-    font-size: 14px;
+    color: #f8f8f8;
+    font-size: 16px;
     font-weight: 300;
     line-height: 22px;
     padding: 10px;
+    text-align: center;
 }
-
+p1{
+    color: #ad2222;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+    text-align: center;
+}
 .row{
     margin-top: 5%;
     display: flex;
@@ -155,7 +195,7 @@ h3{
     margin: 10px 0;
 }
 .course-col:hover{
-    box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
+    box-shadow: 0 0 60px 0px rgba(30, 255, 0, 0.801);
 }
 @media(max-width: 700px){
     .row{
@@ -168,12 +208,27 @@ h3{
 .tutors{
     width: 80%;
     margin: auto;
-    text-align: center;
+    text-align: left;
     padding-top: 50px;
+}
+h4{
+    text-align: left;
+    font-weight: 600;
+    margin: 10px 0;
+    font-size: 30px;
+    color:#575454
+}
+.p2{
+    color: #ad2222;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+    text-align: left;
 }
 .tutors-col{
     flex-basis: 32%;
-    border border-radius: 10px;
+    border-radius: 10px;
     margin-bottom: 30px;
     position: relative;
     overflow: hidden;
@@ -213,11 +268,12 @@ h3{
 }
 
 /*------- courses -------*/
+
 .courses{
     width: 80%;
     margin: auto;
-    text-align: center;
-    padding-top: 100px;
+    text-align: left;
+    padding-top: 40px;
 }
 
 .courses-col{
@@ -246,14 +302,14 @@ h3{
 .testimonials{
     width: 80%;
     margin: auto;
-    padding-top: 100px;
-    text-align: center;
+    padding-top: 50px;
+    text-align: left;
 }
 .testimonials-col{
     flex-basis: 27%;
     border-radius: 10px;
     margin-bottom: 5%;
-    text-align: left;
+    text-align: center;
     background-color: blanchedalmond;  
     padding: 25px;
     cursor: pointer;
@@ -284,6 +340,14 @@ h3{
 
 /*------- Call To Action -------*/
 
+.sub-header2{
+    height: 50vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(images/office2.png);
+    background-position: left;
+    text-align: center;
+    color: #fff;
+}
 .cta{
     margin: 100px auto;
     width: 80%;
@@ -299,10 +363,14 @@ h3{
     margin-bottom: 40px;
     padding: 0;  
 }
+h6{
+    color:#0e0d0d;
+    font-size: 18px;
+}
 .footer{
     width: 100%;
     text-align: center;
-    padding 30px 0;
+    padding: 30px 0;
 }
 .footer{
     margin-bottom: 25px;
@@ -310,20 +378,21 @@ h3{
     font-weight: 600;
 }
 .icons .fab{
-    color: #f44336;
+    color: #3c1a8d;
     margin: 0 13px;
     cursor: pointer;
     padding: 18px 0;
 }
 .fa-thumbs-up{
-    color: #f44336;
+    color: #f52c1e;
+    font-size: 30px;
 }
 
 /*------- About us Page -------*/
 .sub-header{
     height: 50vh;
     width: 100%;
-    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(images/office.jpg);
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(images/about_us.jpg);
     background-position: center;
     text-align: center;
     color: #fff;
@@ -335,8 +404,15 @@ h3{
 .about-us{
     width: 80%;
     margin: auto;
-    padding-top: 80px;
+    padding-top: 5px;
     padding-bottom: 50px;
+}
+h5{
+    text-align: center;
+    font-weight: 600;
+    margin: 10px 0;
+    font-size: 30px;
+    color:#575454
 }
 .about-col{
     flex-basis: 48%;
@@ -362,18 +438,27 @@ h3{
 
 /*------- Blog Content -------*/
 
+.sub-header3{
+    height: 50vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(images/blog.jpg);
+    background-position: center;
+    text-align: center;
+    color: #fff;
+}
 .blog-content{
     width: 80%;
     margin: auto;
-    padding: 60px 0;
+    padding: 2px 0;
 }
 .blog-left{
     flex-basis: 65%;
 }
 .blog-left img{
     width: 100%;
+    padding: 0px;
 }
-.blog-left h2{2
+.blog-left h2{
     color: #222;
     font-weight: 600;
     margin: 30px 0;
@@ -384,7 +469,7 @@ h3{
 .blog-right h3{
     background: #f44336;
     color: #fff;
-    padding: 7px 0;
+    padding: 5px 0;
     margin-bottom: 2opx;
 }
 .blog-right div{
@@ -421,9 +506,9 @@ h3{
     }
 }
 .location{
-    width: 80%;
+    width: 90%;
     margin: auto;
-    padding: 80px 0;
+    padding: 30px 0;
 }
 .location iframe{
     width: 100%;
