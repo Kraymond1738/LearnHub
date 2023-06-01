@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-from flask import Flask, render_template, request, redirect, session
+from flask import Flask, render_template, request, redirect, session, flash
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 from engine.db_config import SQLALCHEMY_DATABASE_URI
@@ -29,6 +29,12 @@ def signup():
         password = request.form['password']
         phone_number = request.form['phone_number']
         account_type = request.form['account_type']
+
+        #check if theres already an account using the provided email
+        exist = User.query.filter_by(email=email).first()
+        if exist:
+            flash("Email already exists")
+            return redirect('/login')
 
         # Hash the password before storing it in the database
         hashed_password = generate_password_hash(password)
