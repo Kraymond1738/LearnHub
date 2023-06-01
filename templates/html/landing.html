@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>E-Learning Landing Page</title>
+  <style>
+    body {
+      font-family: 'Franklin Gothic Medium', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url("images/elearn.jpg");
+      background-size: cover;
+      background-position: center;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+    }
+    
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      width: 30px;
+    }
+    
+    .logo img {
+      height: 50px;
+    }
+
+    .navigation {
+      display: flex;
+    }
+    
+    .navigation a {
+      color: #ffffff;
+      text-decoration: none;
+      margin-left: 20px;
+      padding: 10px 15px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+    
+    .navigation a:hover {
+      background-color: #333333;
+    }
+    
+    .home-link {
+      background-color: #d66813;
+    }
+    
+    .about-link {
+      background-color: #daa412;
+    }
+    
+    .contact-link {
+      background-color: #e44242;
+    }
+    
+    .login-link,
+    .signup-link {
+      background-color: #03a9f4;
+    }
+    
+    .hero-section {
+      text-align: center;
+      margin-top: 0px;
+      width: 100%;
+      background-size: cover;
+    }
+    
+    .hero-image {
+      max-width: 800px;
+      margin-bottom: 30px;
+    }
+    
+    .hero-title {
+      font-size: 36px;
+      margin-bottom: 20px;
+      text-align: right;
+      font-size: 45px;
+    }
+    
+    .hero-description {
+      font-size: 18px;
+      color: #3a3939;
+      margin-bottom: 50px;
+      text-align: right;
+    }
+    
+    .features-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 80px;
+    }
+    
+    .feature-box {
+      width: 200px;
+      padding: 30px;
+      margin: 10px;
+      background-color: rgba(0, 0, 0, 0.4);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      text-align: center;
+    }
+    
+    .feature-icon {
+      font-size: 48px;
+      margin-bottom: 20px;
+      color:#5989a0
+    }
+    
+    .feature-title {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color:antiquewhite;
+    }
+    
+    .feature-description {
+      color: #e6e1e1;
+      font-size: 16px;
+    }
+    
+    .footer {
+      background-color: #333333;
+      color: #ffffff;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <img src="images/learnhub_logo.png" alt="Company Logo">
+      </div>
+      <nav class="navigation">
+        <a href="https://example.com/home" class="home-link">Home</a>
+        <a href="https://example.com/about" class="about-link">About</a>
+        <a href="https://example.com/contact" class="contact-link">Contact</a>
+        <a href="https://example.com/login" class="login-link">Login</a>
+        <a href="https://example.com/signup" class="signup-link">Sign Up</a>
+      </nav>
+    </header>
+    
+    <section class="hero-section">
+      <h1 class="hero-title">Welcome To Our<br>E-learning Platform</h1>
+      <p class="hero-description">Start Your Journey Towards Knowledge and Growth<br>With Our Comprehensive Online Courses.</p>
+    </section>
+    
+    <section class="features-section">
+      <div class="feature-box">
+        <i class="feature-icon">1</i>
+        <h2 class="feature-title">Learn More</h2>
+        <p class="feature-description">You can learn anything. Explore more of our resources and materials on any field of study.</p>
+      </div>
+      <div class="feature-box">
+        <i class="feature-icon">2</i>
+        <h2 class="feature-title">Discover Yourself</h2>
+        <p class="feature-description">Understand your true self: your values and your abilites. A chance to determine your future.</p>
+      </div>
+      <div class="feature-box">
+        <i class="feature-icon">3</i>
+        <h2 class="feature-title">Be Creative</h2>
+        <p class="feature-description">Become the next big thing. Be innovative and creative. Don't be afraid to go beyond the sky.</p>
+      </div>
+    </section>
+    
+    <footer class="footer">
+      &copy; 2023 LearnHub Team. All rights reserved.
+    </footer>
+  </div>
+</body>
+</html>

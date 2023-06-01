@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Amazing Signup Page</title>
+  <style>
+    body {
+      font-family: Georgia, sans-serif;
+      background-color: #284617;
+    }
+    
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 50px;
+      box-shadow: 10 20 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    
+    h1 {
+      color: #45791b;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 10px;
+      color: #9e1e1e;
+      text-align: left;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="tel"],
+    select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #cccccc;
+      border-radius: 3px;
+    }
+    
+    input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: #ffffff;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+    
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+    
+    .message {
+      color: #666666;
+      margin-top: 20px;
+    }
+
+    .login-link {
+      color: #3613b4;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Sign Up</h1>
+    <form>
+      <label for="fname">First Name</label>
+      <input type="text" id="fname" name="fname" required>
+      
+      <label for="lname">Last Name</label>
+      <input type="text" id="lname" name="lname" required>
+      
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+      
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required>
+      
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" required>
+      
+      <label for="accountType">Account Type</label>
+      <select id="accountType" name="accountType" required>
+        <option value="">Select Account Type</option>
+        <option value="student">Student</option>
+        <option value="tutor">Tutor</option>
+      </select>
+      
+      <input type="submit" value="Sign Up">
+    </form>
+    <p class="message">Already have an account? <a href="https://example.com/login" class="login-link">Log In</a></p>
+  </div>
+</body>
+</html>
