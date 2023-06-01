@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>E-Learning Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      background-color: #007bff;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .dashboard {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .dashboard-item {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin-bottom: 20px;
+      flex-basis: calc(33.33% - 20px);
+      text-align: center;
+    }
+
+    .dashboard-item h2 {
+      margin-top: 0;
+    }
+
+    .dashboard-item p {
+      margin-bottom: 0;
+    }
+
+    .dashboard-item a {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+      background-color: #007bff;
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+    }
+
+    .course-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .course-list li {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+    }
+
+    .course-list li span {
+      margin-left: 10px;
+    }
+
+    .course-list li span.duration {
+      margin-left: auto;
+    }
+
+    .logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .logo img {
+      max-width: 150px;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <img src="images/learnhub_logo.png">
+    </div>
+    <h1>E-Learning Dashboard</h1>
+  </header>
+  
+  <div class="container">
+    <div class="dashboard">
+      <div class="dashboard-item">
+        <h2>Tutor</h2>
+        <p>Welcome, Tutor!</p>
+        <a href="#">View Courses</a>
+      </div>
+      
+      <div class="dashboard-item">
+        <h2>Student</h2>
+        <p>Welcome, Student!</p>
+        <a href="#">Enroll in Courses</a>
+      </div>
+      
+      <div class="dashboard-item">
+        <h2>Available Courses</h2>
+        <ul class="course-list">
+          <li>
+            <span>Course 1</span>
+            <span class="duration">Duration: 6 weeks</span>
+          </li>
+          <li>
+            <span>Course 2</span>
+            <span class="duration">Duration: 8 weeks</span>
+          </li>
+          <li>
+            <span>Course 3</span>
+            <span class="duration">Duration: 4 weeks</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
