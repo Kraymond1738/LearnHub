@@ -15,20 +15,46 @@ db.init_app(app)
 
 #Route for home
 @app.route('/')
+def landing():
+    return render_template('html/landing.html')
+
+#route for home page
+@app.route('/home')
 def home():
-    return render_template('html/home.html')
+    return render_template('html/Home.html')
+
+#route for about page
+@app.route('/about')
+def about():
+    return render_template('html/About.html')
+
+#route for contact page
+@app.route('/contact')
+def contact():
+    return render_template('html/contact.html')
+
+#route for the courses page
+@app.route('/courses')
+def courses():
+    return render_template('html/courses.html')
+
+#route for blog
+@app.route('/blog')
+def blog():
+    return render_template('html/Blog.html')
+
 
 # Routes for authentication
 
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
     if request.method == 'POST':
-        first_name = request.form['first_name']
-        last_name = request.form['last_name']
-        email = request.form['email']
-        password = request.form['password']
-        phone_number = request.form['phone_number']
-        account_type = request.form['account_type']
+        first_name = request.form.get('first_name')
+        last_name = request.form.get('last_name')
+        email = request.form.get('email')
+        password = request.form.get('password')
+        phone_number = request.form.get('phone_number')
+        account_type = request.form.get('account_type')
 
         #check if theres already an account using the provided email
         exist = User.query.filter_by(email=email).first()
@@ -37,10 +63,11 @@ def signup():
             return redirect('/login')
 
         # Hash the password before storing it in the database
-        hashed_password = generate_password_hash(password)
+        print("pass", request.form)
+        hashed_password = generate_password_hash(str(password))
 
         # Create a new User object
-        user = User(first_name=first_name, last_name=last_name, email=email,
+        user = User(first_name=(first_name), last_name=last_name, email=email,
                     password=hashed_password, phone_number=phone_number, account_type=account_type)
 
         # Add the user to the database

@@ -91,21 +91,23 @@
 
     <div class="signup-form">
         <div class="logo">
-            <img src="images/learnhub_logo.png" alt="Company Logo">
+            <a href="http://127.0.0.1:5000/home">
+                <img src="static/images/learnhub_logo.png" alt="Company Logo">
+            </a>
         </div>
 
         <h2>Create an Account</h2>
 
-        <form>
-            <input type="text" placeholder="First Name" required>
-            <input type="text" placeholder="Last Name" required>
-            <input type="email" placeholder="Email Address" required>
-            <input type="password" placeholder="Password" required>
-            <input type="tel" placeholder="Phone Number" required>
-            <select required>
+        <form id="signupForm" action="http://127.0.0.1:5000/signup" method="POST">
+            <input type="text" name="first_name" placeholder="First Name" required>
+            <input type="text" name="last_name" placeholder="Last Name" required>
+            <input type="email" name="email" placeholder="Email Address" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="tel" name="phone_number" placeholder="Phone Number" required>
+            <select name="account_type" required>
                 <option value="">Account Type</option>
-                <option value="tutor">Tutor</option>
-                <option value="student">Student</option>
+                <option value="Tutor">Tutor</option>
+                <option value="Student">Student</option>
             </select>
 
             <button type="submit">Sign Up</button>

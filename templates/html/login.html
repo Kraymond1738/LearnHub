@@ -8,8 +8,8 @@
       height: 100vh;
       margin: 0;
       display: flex;
-      align-items: center;
-      justify-content: center;
+      align-items: left;
+      justify-content: left;
       background-color: #f2f2f2;
     }
     
@@ -54,7 +54,7 @@
     }
 
     h2 {
-      text-align: center;
+      text-align: left;
       margin-bottom: 30px;
       color: #333;
     }
@@ -96,6 +96,7 @@
     .signup-link {
       color: #c00909;
     }
+  
   </style>
 </head>
 <body>
@@ -103,10 +104,12 @@
     <div class="background"></div>
     <div class="content">
         <div class="logo">
-            <img src="images/learnhub_logo.png">
+          <a href="http://127.0.0.1:5000/home">
+              <img src="static/images/learnhub_logo.png">
+            </a>
           </div>
       <h2>Login</h2>
-      <form>
+      <form id=loginForm action="http://127.0.0.1:5000/login" method="POST">
         <div class="form-group">
           <label for="email">Email</label>
           <input type="text" id="email" name="email" placeholder="Enter your email" required>
