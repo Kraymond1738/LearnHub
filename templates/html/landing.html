@@ -22,18 +22,27 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 0;
+      padding: 30px 0;
     }
     
     .logo {
       font-size: 24px;
       font-weight: bold;
-      width: 30px;
+      width: 50px;
     }
     
     .logo img {
-      height: 50px;
+      height: 60px;
     }
+
+    .logo:hover {
+    box-shadow: 0 0 5px 0px rgba(5, 200, 0, 0.800);
+    flex-basis: 16%;
+    border-radius: 10px;
+    padding: 10px 8px;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
 
     .navigation {
       display: flex;
@@ -47,7 +56,7 @@
       border-radius: 5px;
       transition: background-color 0.3s ease;
     }
-    
+    .hero-section a:hover,
     .navigation a:hover {
       background-color: #333333;
     }
@@ -61,12 +70,24 @@
     }
     
     .contact-link {
-      background-color: #e44242;
+      background-color: #25ad59;
     }
     
     .login-link,
     .signup-link {
       background-color: #03a9f4;
+    }
+
+    .GetStarted-link {
+      background-color: #e44242;
+      color: #ffffff;
+      text-decoration: none;
+      margin-left: -20px;
+      padding: 10px 15px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+      float: right;
+      margin-top: -30px;
     }
     
     .hero-section {
@@ -83,9 +104,9 @@
     
     .hero-title {
       font-size: 36px;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
       text-align: right;
-      font-size: 45px;
+      font-size: 33px;
     }
     
     .hero-description {
@@ -111,6 +132,15 @@
       border-radius: 5px;
       text-align: center;
     }
+
+    .feature-box:hover {
+    box-shadow: 0 0 10px 0px rgba(0, 25, 253, 0.8);
+    flex-basis: 25%;
+    border-radius: 10px;
+    padding: 10px 8px;
+    box-sizing: border-box;
+    transition: 0.5s; 
+    }
     
     .feature-icon {
       font-size: 48px;
@@ -130,31 +160,46 @@
     }
     
     .footer {
-      background-color: #333333;
+      background-color: #111010;
       color: #ffffff;
       text-align: center;
-      padding: 20px;
+      padding: 15px;
     }
+
+    .social-icon {
+    color: #1c73a5;
+    transition: color 0.2s;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 25px;
+}
+
+.social-icon:hover {
+    color: rgb(148, 147, 147);
+}
   </style>
 </head>
 <body>
   <div class="container">
     <header>
       <div class="logo">
-        <img src="images/learnhub_logo.png" alt="Company Logo">
+        <a href="http://127.0.0.1:5000/Home.html" target="_blank"> 
+            <img src="images/learnhub_logo.png" >
+        </a>
       </div>
       <nav class="navigation">
-        <a href="https://example.com/home" class="home-link">Home</a>
-        <a href="https://example.com/about" class="about-link">About</a>
-        <a href="https://example.com/contact" class="contact-link">Contact</a>
-        <a href="https://example.com/login" class="login-link">Login</a>
-        <a href="https://example.com/signup" class="signup-link">Sign Up</a>
+        <a href="http://127.0.0.1:5000/Home.html" class="home-link">Home</a>
+        <a href="http://127.0.0.1:5000/About.html" class="about-link">About</a>
+        <a href="http://127.0.0.1:5000/contact.html" class="contact-link">Contact</a>
+        <a href="http://127.0.0.1:5000/login.html" class="login-link">Login</a>
+        <a href="http://127.0.0.1:5000/signup.html" class="signup-link">Sign Up</a>
       </nav>
     </header>
     
     <section class="hero-section">
-      <h1 class="hero-title">Welcome To Our<br>E-learning Platform</h1>
+      <h1 class="hero-title">Welcome To LearnHub<br>E-learning Platform</h1>
       <p class="hero-description">Start Your Journey Towards Knowledge and Growth<br>With Our Comprehensive Online Courses.</p>
+      <a href="http://127.0.0.1:5000/login.html" class="GetStarted-link">Get Started</a>
     </section>
     
     <section class="features-section">
@@ -165,8 +210,8 @@
       </div>
       <div class="feature-box">
         <i class="feature-icon">2</i>
-        <h2 class="feature-title">Discover Yourself</h2>
-        <p class="feature-description">Understand your true self: your values and your abilites. A chance to determine your future.</p>
+        <h2 class="feature-title">Live Webinar</h2>
+        <p class="feature-description">Join our live learning sessions and meetings. Connect with our tutors and the global community.</p>
       </div>
       <div class="feature-box">
         <i class="feature-icon">3</i>
@@ -176,7 +221,24 @@
     </section>
     
     <footer class="footer">
-      &copy; 2023 LearnHub Team. All rights reserved.
+            <a class="social-icon" href="https://twitter.com/Kriz_Baba" target="_blank">
+                <ion-icon name="logo-twitter"></ion-icon> 
+            </a>
+            <a class="social-icon" href="https://github.com/KrizTech" target="_blank">
+                <ion-icon name="logo-github"></ion-icon> 
+            </a>
+            <a class="social-icon" href="https://www.linkedin.com/in/kriz-tech-18093224b/" target="_blank">
+                <ion-icon name="logo-linkedin"></ion-icon> 
+            </a>
+            <a class="social-icon" href="https://www.gmail.com" target="_blank">
+                <ion-icon name="mail-outline"></ion-icon> 
+            </a>
+    
+            <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+            <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+            <br><br>&copy; 2023 LearnHub Team. All rights reserved.
+        </div>
+        
     </footer>
   </div>
 </body>

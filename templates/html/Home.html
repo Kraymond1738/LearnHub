@@ -3,7 +3,7 @@
 <head>
     <meta name= "viewport" content ="width=device-width, initial-scale=1.0"> 
     <title>Welcome to LearnHub</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
@@ -13,15 +13,18 @@
 <body>
 <section class="header">
         <nav>
-            <a href="index.html"><img src="{{ url_for('static', filename='images/learnhub_logo.png') }}" alt="Image"></a>
+            <div class="logo">
+            <a href="http://127.0.0.1:5000/Home.html" target="">
+                <img src="images/learnhub_logo.png">
+            </a>
+            </div>
             <div class="nav-links" id="navLinks">
                 <i class="fas fa-times" onclick="hideMenu()"></i>
                 <ul>
-                    <li><a href="http://127.0.0.1:5000/signup">SIGNUP</a></li>
-                    <li><a href="About.html">ABOUT</a></li>
-                    <li><a href="courses.html">COURSES</a></li>
-                    <li><a href="Blog.html">BLOG/SERVICES</a></li>
-                    <li><a href="contact.html">CONTACT</a></li>
+                    <li><a href="http://127.0.0.1:5000/About.html">ABOUT</a></li>
+                    <li><a href="http://127.0.0.1:5000/courses.html">COURSES</a></li>
+                    <li><a href="http://127.0.0.1:5000/Blog.html">BLOG/SERVICES</a></li>
+                    <li><a href="http://127.0.0.1:5000/contact.html">CONTACT</a></li>
                 </ul>
             </div>
            <i class="fas fa-bars" onclick="showMenu()"></i>
@@ -33,7 +36,7 @@
     <p>Mentorship | Top Instrutors | Courses | Exclusive Materials</p>
     <h2>Start Studying With Us. Let's Grow Your Education Level Up with E-learning</h2>
     <br>
-    <a href="" class="hero-btn">Visit us to know More</a>
+    <a href="http://127.0.0.1:5000/login.html" class="hero-btn">Login to Explore More</a>
 </div>
 
     
@@ -41,7 +44,7 @@
     
 <!------- Course Categories ------->
 <br>
-<section class="header2"></section>
+<section class="header2">
     <section class="course">
         <h1>COURSES CATEGORIES WE OFFER</h1>
         <p>Diverse courses, Expert instructors, Comprehensive materials,
@@ -63,6 +66,7 @@
         </div>
         
     </section>
+</section>
     
     <!------- Tutors ------->
     
@@ -72,14 +76,13 @@
     
     <div class="row">
             <div class="tutors-col">
-                <img src="{{ url_for('static', filename='images/sophie.jpg') }}" alt="Image">
-
+                <img src="images/sophie.jpg">
                 <div class="layer">
                     <h3>SOPHIE</h3>
                 </div>
             </div>
             <div class="tutors-col">
-                <img src="{{ url_for('static', filename='images/Tut1.png') }}" alt="Image">
+                <img src="images/Tut1.png">
                 <div class="layer">
                     <h3>JENIFER</h3>
                 </div>
@@ -117,7 +120,7 @@
             <div class="courses-col">
                 <img src="images/science1.PNG">
                     <h3>SCIENCE</h3>
-                    <p2>Dive into the fascinating world of science and unravel the mysteries of the universe with our captivating science courses.</p2>
+                    <p2>Dive into the world of science and unravel the mysteries of the universe with our captivating science courses.</p2>
                 </div>
             
             </div>
@@ -133,7 +136,7 @@
     <div class="row">
         
         <div class="testimonials-col">
-            <img src="images/tutor_2.jpg">
+            <img src="images/student.jpg">
             <div>
                 <p2>Choosing LearnHub was a game-changer for me. The flexibility, quality, and support exceeded my expectations.</p2>
                 <h3>Davina Johnson</h3>
@@ -148,7 +151,7 @@
          <div class="testimonials-col">
             <img src="images/white3.PNG">
             <div>
-                <p2>LearnHub have revolutionized my learning experience, providing flexibility, quality content, and valuable skills.</p2>
+                <p2> The LearnHub platform have revolutionized my learning experience, providing flexibility, quality content, and valuable skills.</p2>
                 <h3>Sam Mendis</h3>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
@@ -178,7 +181,7 @@
     
     <section class="cta">
         <h1>Enroll For Our Various Online Courses<br>Anywhere in the World</h1>
-        <a href="" class="hero-btn">CONTACT US</a>
+        <a href="http://127.0.0.1:5000/contact.html" class="hero-btn">CONTACT US</a>
         
     
     </section>
@@ -186,16 +189,23 @@
    <!------- Footer ------->
     
     <section class="footer">
-        <h5>ABOUT US</h5>
-        <p1>LearnHub is an innovative course provider app that offers a wide range of educational programs to enhance your knowledge and skills. <br>With a userinterface, LearnHub provides interactive courses, expert instructors, and personalized learning paths.<br>Whether you are interested in professional development, academic subjects, or hobbies, LearnHub has something for everyone.</p1>
-        
-        <div class="icons">
-            <i class="fab fa-facebook"></i>
-            <i class="fab fa-twitter"></i>
-            <i class="fab fa-instagram"></i>
-            <i class="fab fa-linkedin"></i>
-        </div>
-        <p1>Powered by <i class="fas fa-thumbs-up"></i> LearnHub Team</p1>
+        <a class="social-icon" href="https://twitter.com/Kriz_Baba" target="_blank">
+            <ion-icon name="logo-twitter"></ion-icon> 
+        </a>
+        <a class="social-icon" href="https://github.com/KrizTech" target="_blank">
+            <ion-icon name="logo-github"></ion-icon> 
+        </a>
+        <a class="social-icon" href="https://www.linkedin.com/in/kriz-tech-18093224b/" target="_blank">
+            <ion-icon name="logo-linkedin"></ion-icon> 
+        </a>
+        <a class="social-icon" href="https://www.gmail.com" target="_blank">
+            <ion-icon name="mail-outline"></ion-icon> 
+        </a>
+
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    </div>
+        <br><p1>Powered by <i class="fas fa-thumbs-up"></i> LearnHub Team</p1>
     
         
     </section> 

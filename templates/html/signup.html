@@ -1,99 +1,117 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Amazing Signup Page</title>
-  <style>
-    body {
-      font-family: Georgia, sans-serif;
-      background-color: #284617;
-    }
-    
-    .container {
-      max-width: 400px;
-      margin: 0 auto;
-      padding: 20px;
-      background-color: #ffffff;
-      border-radius: 50px;
-      box-shadow: 10 20 10px rgba(0, 0, 0, 0.1);
-      text-align: center;
-    }
-    
-    h1 {
-      color: #45791b;
-    }
-    
-    label {
-      display: block;
-      margin-bottom: 10px;
-      color: #9e1e1e;
-      text-align: left;
-    }
-    
-    input[type="text"],
-    input[type="email"],
-    input[type="password"],
-    input[type="tel"],
-    select {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 20px;
-      border: 1px solid #cccccc;
-      border-radius: 3px;
-    }
-    
-    input[type="submit"] {
-      width: 100%;
-      padding: 10px;
-      background-color: #4CAF50;
-      color: #ffffff;
-      border: none;
-      border-radius: 3px;
-      cursor: pointer;
-    }
-    
-    input[type="submit"]:hover {
-      background-color: #45a049;
-    }
-    
-    .message {
-      color: #666666;
-      margin-top: 20px;
-    }
+    <title>Sign Up</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
 
-    .login-link {
-      color: #3613b4;
-    }
-  </style>
+        /* Header styles */
+        .header {
+            background-color: #319125;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        /* Sign-up form styles */
+        .signup-form {
+            width: 400px;
+            margin: 30px auto;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .signup-form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .signup-form input[type="text"],
+        .signup-form input[type="email"],
+        .signup-form input[type="password"],
+        .signup-form input[type="tel"],
+        .signup-form select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .signup-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            border: none;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .signup-form p {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .signup-form p a {
+            color: #d61b1b;
+        }
+
+        /* Company logo styles */
+        .logo {
+            text-align: center;
+            margin-bottom: 2px;
+        }
+
+        .logo img {
+            width: 300px;
+            height: 100px;
+            border-radius: 800%;
+        }
+
+    </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Sign Up</h1>
-    <form>
-      <label for="fname">First Name</label>
-      <input type="text" id="fname" name="fname" required>
-      
-      <label for="lname">Last Name</label>
-      <input type="text" id="lname" name="lname" required>
-      
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required>
-      
-      <label for="password">Password</label>
-      <input type="password" id="password" name="password" required>
-      
-      <label for="phone">Phone Number</label>
-      <input type="tel" id="phone" name="phone" required>
-      
-      <label for="accountType">Account Type</label>
-      <select id="accountType" name="accountType" required>
-        <option value="">Select Account Type</option>
-        <option value="student">Student</option>
-        <option value="tutor">Tutor</option>
-      </select>
-      
-      <input type="submit" value="Sign Up">
-    </form>
-    <p class="message">Already have an account? <a href="https://example.com/login" class="login-link">Log In</a></p>
-  </div>
+    <header class="header">
+        <h1>Sign Up</h1>
+    </header>
+
+    <div class="signup-form">
+        <div class="logo">
+            <img src="images/learnhub_logo.png" alt="Company Logo">
+        </div>
+
+        <h2>Create an Account</h2>
+
+        <form>
+            <input type="text" placeholder="First Name" required>
+            <input type="text" placeholder="Last Name" required>
+            <input type="email" placeholder="Email Address" required>
+            <input type="password" placeholder="Password" required>
+            <input type="tel" placeholder="Phone Number" required>
+            <select required>
+                <option value="">Account Type</option>
+                <option value="tutor">Tutor</option>
+                <option value="student">Student</option>
+            </select>
+
+            <button type="submit">Sign Up</button>
+        </form>
+
+        <p class="message">Already have an account? <a href="http://127.00.1:5000/login.html" class="login-link">Login</a></p>
+    </div>
 </body>
 </html>
