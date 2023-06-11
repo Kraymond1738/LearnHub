@@ -59,7 +59,7 @@ def signup():
         #check if theres already an account using the provided email
         exist = User.query.filter_by(email=email).first()
         if exist:
-            flash("Email already exists")
+            flash("Email already exists", 'error')
             return redirect('/login')
 
         # Hash the password before storing it in the database

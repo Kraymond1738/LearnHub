@@ -85,6 +85,9 @@
     </style>
 </head>
 <body>
+    <div id="messages">
+    {% include '/html/flash_msg.html' %}
+    </div>
     <header class="header">
         <h1>Sign Up</h1>
     </header>
@@ -113,7 +116,7 @@
             <button type="submit">Sign Up</button>
         </form>
 
-        <p class="message">Already have an account? <a href="http://127.00.1:5000/login.html" class="login-link">Login</a></p>
+        <p class="message">Already have an account? <a href="http://127.00.1:5000/login" class="login-link">Login</a></p>
     </div>
 </body>
 </html>
