@@ -92,8 +92,9 @@ def login():
             return redirect('/dashboard')
         else:
             # Invalid credentials, display an error message
-            error_message = 'Invalid email or password'
-            return render_template('login.html', error_message=error_message)
+            #error_message = 'Invalid email or password'
+            #return render_template('login.html', error_message=error_message)
+            pass
 
     return render_template('html/login.html')
 
