@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>E-Learning Dashboard</title>
+  <style>
+    body {
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      background-color: #22364e;
+      color: #fff;
+      padding-top: 30px;
+      text-align: center;
+      height: 100px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .container2 {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+      margin-right: 60px;
+      margin-top: -60px;
+    }
+
+    .dashboard {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .dashboard2 {
+      background-color: #f2f2f2;
+      padding: 50px 0;
+      text-align: center;
+    }
+    .dashboard-item {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin-bottom: 20px;
+      flex-basis: calc(33.33% - 20px);
+      text-align: center;
+      height: 140px;
+    }
+    .dashboard-item2:hover {
+    box-shadow: 0 0 5px 0px rgba(17, 0, 248, 0.8);
+    flex-basis: 50%;
+    border-radius: 10px;
+    padding: 10px 8px;
+    box-sizing: border-box;
+    transition: 0.5s;
+    }
+    .dashboard-item2 {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin-bottom: 20px;
+      flex-basis: calc(33.33% - 20px);
+      text-align: center;
+      height: 600px;
+    }
+
+    .dashboard-item2 a:hover,
+    .navigation a:hover {
+      background-color: #22364e;
+    }
+    .dashboard-item2 a {
+      display: block;
+      text-align: center;
+      margin-top: 35px;
+      background-color: #007bff;
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+    }
+
+    .dashboard-item3 {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin-bottom: 20px;
+      flex-basis: calc(33.33% - 20px);
+      text-align: center;
+      height: 300px;
+      margin-top: -450px;
+    }
+    .dashboard-item h2 {
+      margin-top: 0;
+    }
+
+    .dashboard-item p {
+      margin-bottom: 0;
+    }
+
+    .dashboard-item a:hover,
+    .navigation a:hover {
+      background-color: #22364e;
+    }
+    .dashboard-item a {
+      display: block;
+      text-align: center;
+      margin-top: 30px;
+      background-color: #007bff;
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+    }
+
+    .sidebar {
+      background-color: #22364e;
+      color: #fff;
+      width: 200px;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      padding: 20px;
+      overflow-y: auto;
+    }
+    
+    .toggle-menu {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      margin-bottom: 20px;
+    }
+    
+    .menu-icon {
+      width: 30px;
+      height: 3px;
+      background-color: #fff;
+      margin-bottom: 5px;
+    }
+    
+    .sidebar-menu {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .sidebar-menu li {
+      margin-bottom: 10px;
+    }
+    
+    .sidebar-menu li a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .search-bar {
+      margin-bottom: 5px;
+      padding-right: 20px;
+      margin-top: 20px;
+    }
+    
+    .search-bar input[type="text"] {
+      padding: 5px;
+      width: 200px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+      margin-right: 40px;
+    }
+    
+    .search-button {
+      padding: 5px 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    
+    .content {
+      margin-left: 270px;
+    }
+
+    .course-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .course-list li {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+    }
+
+    .course-list li span {
+      margin-left: 10px;
+    }
+
+    .course-list li span.duration {
+      margin-left: auto;
+    }
+    .course-link:hover,
+    .navigation a:hover {
+      background-color: #22364e;
+    }
+    .course-link {
+      padding: 5px 10px;
+      background-color: #007bff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 20px;
+    }
+    h1 {
+        color: white;
+        margin-top: -0px;
+        margin-left: 180px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    h2 {
+        color: rgb(238, 30, 30);
+        margin-top: -0px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    h3 {
+        color: rgb(238, 30, 30);
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    h4 {
+        color: rgb(238, 30, 30);
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        margin-top: -10px;
+        padding: -260px;
+        padding-top: -100px;
+    }
+    .Live-session {
+        padding: -80px;
+    }
+    .logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 0px;
+      padding-top: 20px;
+      margin-left: 180px;
+    }
+
+    .logo img {
+      max-width: 200px;
+      height: auto;
+      margin-top: -40px;
+    }
+    .logout-button {
+      background-color: transparent;
+      color: #fff;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      text-align: right;
+      text-decoration: wavy;
+      padding: 5px 20px;
+      background-color: #ff4d4d;
+      border-radius: 5px;
+      box-shadow: black;
+      float: right;
+      margin-top: -70px;
+      margin-right: 30px;
+    }
+    .logout-button:hover{
+      background-color: #22364e;
+    }
+    .social-icon {
+    color: #007bff;
+    transition: color 0.2s;
+    text-decoration: none;
+    margin: 0 5px;
+    font-size: 30px;
+}
+
+.social-icon:hover {
+    color: rgb(148, 147, 147);
+}
+.footer {
+    background-color: #22364e;
+    margin-bottom: -80px;
+    width: 120%;
+    height: 80px;
+    margin-left: -100px;
+}
+.footer p {
+    padding: -10px;
+    margin-top: 5px;
+    color:#f2f2f2;
+}
+
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <a href="http://127.0.0.1:5000/student_dashboard.html" target="_blank">
+        <img src="images/learnhub_logo.png">
+      </a>
+    </div>
+    <h1> Student Dashboard</h1>
+    <div class="nav-links" id="navLinks" class="navigation" style="display: flex; justify-content: flex-end;">
+                <i class="fas fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <a href="http://127.0.0.1:5000/login.html" class="logout-button">Logout</a>
+                </ul>
+            </div>
+  </header>
+  <section class="dashboard2">
+    <div class="container2">
+      <div class="sidebar">
+        <div class="toggle-menu">
+          <span class="menu-icon"></span>
+          <span class="menu-icon"></span>
+          <span class="menu-icon"></span>
+        </div>
+        <ul class="sidebar-menu">
+          <li><a href="http://127.0.0.1:5000/view_courses.html">Courses</a></li>
+          <li><a href="https://www.brightannica.com.au/index.php/top-5-favourite-courses.html">Favorite</a></li>
+          <li><a href="https://www.memonotepad.com/">Notes</a></li>
+          <li><a href="htp://127.0.0.1:5000/tutors.html">Your Tutors</a></li>
+          <li><a href="#">Settings</a><br>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for courses...">
+                <button class="search-button">Search</button>
+              </div>
+        </li>
+        </ul>
+      </div>
+
+  <div class="container">
+    <div class="dashboard">
+      <div class="dashboard-item">
+        <h2>Student</h2>
+        <p>Welcome, Scholar!</p>
+        <a href="http://127.0.0.1:5000/view_courses.html">View Courses</a>
+      </div>
+      
+      <div class="dashboard-item2">
+        <h2>Tutee</h2>
+        <p>Hello there, Enjoy The Ride!</p>
+        <a href="http://127.0.0.1:5000/enroll.html">Enroll in Courses</a><br>
+        <h3>Resources And Links</h3>
+        <a href="https://www.mastersportal.com/personality-test/" class="course-link">What To Study</a>
+        <a href="https://www.123test.com/career-test/" class="course-link">Career Test</a>
+        <p>More coming soon!! Stay Close..</p>
+        <h4><br><br><br><br><br>Webinars</h4>
+        <a href="http://127.0.0.1:5000/video.html" class="Live-session"> Join Live Session</a>
+      </div>
+      
+      <div class="dashboard-item3">
+        <h2>Free Trending Courses</h2>
+        <ul class="course-list">
+          <li>
+            <span>HealthCare</span>
+            <span class="duration"><br>Duration: 6 weeks</span>
+            <a href="https://www.who.int/health-topics/primary-health-care#tab=tab_1" class="course-link">Materials</a>
+          </li>
+          <li>
+            <span>Languages</span>
+            <span class="duration"><br>Duration: 8 weeks</span>
+            <a href="http://www.scholarpedia.org/article/Language_(linguistics)" class="course-link">Materials</a>
+          </li>
+          <li>
+            <span>P/Hygiene</span>
+            <span class="duration"><br>Duration: 3 weeks</span>
+            <a href="https://www.medicalnewstoday.com/articles/personal-hygiene" class="course-link">Materials</a>
+          </li>
+          <li>
+            <span>Evolution</span>
+            <span class="duration"><br>Duration: 6 weeks</span>
+            <a href="https://plato.stanford.edu/entries/evolution/" class="course-link">Materials</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!------- Footer ------->
+    
+  <section class="footer">
+    <a class="social-icon" href="https://twitter.com/Kriz_Baba" target="_blank">
+        <ion-icon name="logo-twitter"></ion-icon> 
+    </a>
+    <a class="social-icon" href="https://github.com/KrizTech" target="_blank">
+        <ion-icon name="logo-github"></ion-icon> 
+    </a>
+    <a class="social-icon" href="https://www.linkedin.com/in/kriz-tech-18093224b/" target="_blank">
+        <ion-icon name="logo-linkedin"></ion-icon> 
+    </a>
+    <a class="social-icon" href="https://www.gmail.com" target="_blank">
+        <ion-icon name="mail-outline"></ion-icon> 
+    </a>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        <p>&copy; 2023 LearnHub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    
+</section>
+</body>
+</html>

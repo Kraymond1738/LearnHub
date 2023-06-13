@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tutor Dashboard</title>
+  <style>
+    /* Style the course containers */
+    .course-container {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    /* Style the collapsible dropdowns */
+    .collapsible {
+      cursor: pointer;
+      padding: 5px;
+      background-color: #eee;
+      border: none;
+      text-align: left;
+      outline: none;
+      width: 100%;
+    }
+
+    .content {
+      padding: 0 18px;
+      display: none;
+      overflow: hidden;
+      background-color: #f9f9f9;
+    }
+
+    .active {
+      display: block;
+    }
+
+    /* Style the buttons */
+    .dashboard-button {
+      margin-right: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Tutor Dashboard</h1>
+
+  <!-- Container for dynamically created courses -->
+  <div id="dashboard-container"></div>
+
+  <script>
+    // Retrieve courses from local storage
+    let courses = JSON.parse(localStorage.getItem('courses')) || [];
+
+    // Function to delete a course
+    function deleteCourse(id) {
+      courses = courses.filter(course => course.id !== id);
+      localStorage.setItem('courses', JSON.stringify(courses));
+      renderDashboard();
+    }
+
+    // Function to toggle the content visibility in the collapsible dropdown
+    function toggleContent(id) {
+      const content = document.getElementById(`content-${id}`);
+      content.classList.toggle('active');
+    }
+
+    // Function to render the tutor's dashboard
+    function renderDashboard() {
+      const dashboardContainer = document.getElementById('dashboard-container');
+      dashboardContainer.innerHTML = '';
+
+      courses.forEach(course => {
+        // Create course container
+        const courseContainer = document.createElement('div');
+        courseContainer.classList.add('course-container');
+
+        // Create course elements
+        const courseTitle = document.createElement('h3');
+        courseTitle.textContent = course.title;
+
+        const courseDescription = document.createElement('p');
+        courseDescription.textContent = course.description;
+
+        // Create collapsible dropdown
+        const collapsible = document.createElement('button');
+        collapsible.classList.add('collapsible');
+        collapsible.textContent = 'View Content';
+        collapsible.addEventListener('click', () => toggleContent(course.id));
+
+        const content = document.createElement('div');
+        content.id = `content-${course.id}`;
+        content.classList.add('content');
+
+        const courseContent = document.createElement('p');
+        courseContent.textContent = course.content;
+
+        // Create buttons for edit and delete
+        const editButton = document.createElement('button');
+        editButton.textContent = 'Edit';
+        editButton.classList.add('dashboard-button');
+        editButton.addEventListener('click', () => showEditForm(course.id));
+
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Delete';
+        deleteButton.classList.add('dashboard-button');
+        deleteButton.addEventListener('click', () => deleteCourse(course.id));
+
+        // Append course elements to the container
+        courseContainer.appendChild(courseTitle);
+        courseContainer.appendChild(courseDescription);
+        content.appendChild(courseContent);
+        courseContainer.appendChild(collapsible);
+        courseContainer.appendChild(content);
+        courseContainer.appendChild(editButton);
+        courseContainer.appendChild(deleteButton);
+
+        // Append the container to the tutor's dashboard
+        dashboardContainer.appendChild(courseContainer);
+      });
+    }
+
+    // Function to show the edit form
+    function showEditForm(id) {
+      const course = courses.find(course => course.id === id);
+
+      const editForm = document.createElement('form');
+      editForm.innerHTML = `
+        <input type="text" id="edit-course-title" placeholder="Course Title" value="${course.title}" required>
+        <textarea id="edit-course-description" placeholder="Course Description" required>${course.description}</textarea>
+        <textarea id="edit-course-content" placeholder="Course Content" required>${course.content}</textarea>
+        <button type="submit">Update</button>
+      `;
+
+      // Submit handler for the edit form
+      editForm.addEventListener('submit', event => {
+        event.preventDefault();
+
+        const editedCourse = {
+          id: id,
+          title: document.getElementById('edit-course-title').value,
+          description: document.getElementById('edit-course-description').value,
+          content: document.getElementById('edit-course-content').value
+        };
+
+        courses = courses.map(course => course.id === id ? editedCourse : course);
+        localStorage.setItem('courses', JSON.stringify(courses));
+        renderDashboard();
+      });
+
+      // Replace the course container with the edit form
+      const courseContainer = document.getElementById(`content-${id}`).parentNode;
+      courseContainer.innerHTML = '';
+      courseContainer.appendChild(editForm);
+    }
+
+    // Call the renderDashboard function initially to display existing courses
+    renderDashboard();
+  </script>
+</body>
+</html>

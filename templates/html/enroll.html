@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Enroll Dashboard</title>
+  <style>
+    /* Global Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Header Styles */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      background-color: #22364e;
+      color: #fff;
+    }
+
+    .logo {
+      display: flex;
+      align-items: left;
+      justify-content: left;
+      margin-bottom: -10px;
+    }
+    
+    .logo img {
+      width: 140px;
+      height: 50px;
+    }
+
+    .logout {
+      cursor: pointer;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    /* Main Content Styles */
+    .main-content {
+      padding: 20px;
+    }
+
+    .enroll-section {
+      margin-bottom: 20px;
+    }
+
+    .collapsible {
+      margin-bottom: 10px;
+      cursor: pointer;
+      background-color: #ddd;
+      padding: 8px;
+      color: #333;
+    }
+
+    .collapsible-content {
+      display: none;
+      background-color: #f9f9f9;
+      padding: 10px;
+    }
+
+    .collapsible-content p {
+      margin: 0;
+    }
+
+    .collapsible.active {
+      background-color: #ccc;
+    }
+
+    /* Enrolled Courses Styles */
+    .enrolled-courses {
+      margin-bottom: 20px;
+    }
+
+    .enrolled-courses h2 {
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    .enrolled-courses ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .enrolled-courses li {
+      margin-bottom: 5px;
+    }
+
+    .delete-btn {
+      color: #ff0000;
+      cursor: pointer;
+      margin-left: 5px;
+    }
+
+    /* Responsive Styles */
+    @media only screen and (max-width: 768px) {
+      .sidebar {
+        width: 100%;
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <!-- Add logo here -->
+      <a href="http://127.0.0.1:5000/student_dashboard.html" target="_blank">
+        <img src="images/learnhub_logo.png">
+      </a>
+    </div>
+    <a class="logout" href="http://127.0.0.1:5000/login.html">Logout</a>
+  </header>
+
+  <div class="main-content">
+    <div class="enroll-section">
+      <h2>Enroll for Courses</h2>
+      <p>Enter Course ID:</p>
+      <input type="text" id="courseIdInput" placeholder="Course ID">
+      <button id="enrollButton">Enroll</button>
+    </div>
+
+    <div class="enrolled-courses">
+      <h2>Enrolled Courses</h2>
+      <ul id="enrolledCoursesList">
+        <!-- Enrolled courses will be dynamically added here -->
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    // Add your JavaScript code here for any interactive functionality
+
+    const enrollButton = document.getElementById('enrollButton');
+    const courseIdInput = document.getElementById('courseIdInput');
+    const enrolledCoursesList = document.getElementById('enrolledCoursesList');
+
+    enrollButton.addEventListener('click', () => {
+      const courseId = courseIdInput.value;
+      enrollCourse(courseId);
+    });
+
+    function enrollCourse(courseId) {
+      // Simulating enrollment by adding the course to the list
+      const li = document.createElement('li');
+      const collapsible = document.createElement('div');
+      const collapsibleContent = document.createElement('div');
+      const deleteButton = document.createElement('span');
+
+      collapsible.classList.add('collapsible');
+      collapsible.textContent = `Course ${courseId}`;
+      collapsibleContent.classList.add('collapsible-content');
+      collapsibleContent.innerHTML = `<p>Course ${courseId} content goes here</p>`;
+      deleteButton.classList.add('delete-btn');
+      deleteButton.innerHTML = 'Delete';
+
+      collapsible.addEventListener('click', () => {
+        collapsible.classList.toggle('active');
+        if (collapsibleContent.style.display === 'block') {
+          collapsibleContent.style.display = 'none';
+        } else {
+          collapsibleContent.style.display = 'block';
+        }
+      });
+
+      deleteButton.addEventListener('click', () => {
+        li.remove();
+      });
+
+      li.appendChild(collapsible);
+      li.appendChild(deleteButton);
+      li.appendChild(collapsibleContent);
+
+      enrolledCoursesList.appendChild(li);
+
+    }
+  </script>
+</body>
+</html>

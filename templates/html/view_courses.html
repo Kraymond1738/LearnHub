@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Course List</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #8cafb4;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .course-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .course-card {
+      background-color: #ffffffd7;
+      border-radius: 5px;
+      padding: 20px;
+      flex-basis: calc(50% - 10px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .course-card:hover {
+    box-shadow: 0 0 5px 0px rgba(17, 0, 248, 0.966);
+    flex-basis: 60%;
+    border-radius: 10px;
+    padding: 10px 8px;
+    box-sizing: border-box;
+    transition: 0.5s;
+    }
+    .course-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .course-duration {
+      color: #888;
+      font-size: 14px;
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>COURSE LIST</h1>
+    <div class="course-list" id="courseList"></div>
+  </div>
+
+  <script>
+    const courses = [
+      { title: 'Data Analysis', duration: '2 hours, Everyday For 6months', },
+      { title: 'Cloud Engineering', duration: '1.5 hours, 4days a week For 3months' },
+      { title: 'Business Administration', duration: '3 hours, Everyday For 6months' },
+      { title: 'International Relations', duration: '2.5 hours, 3times a week for 3months' },
+      { title: 'Product Management', duration: '1 hour, 2times a week for 2months' },
+      { title: 'Sciences & Evolution', duration: '2 hours, 5times a week for 6months' },
+      { title: 'Architecture & Surveying', duration: '1.5 hours, Everyday for 1year' },
+      { title: 'Graphics Design & Web Devops', duration: '3.5 hours, Everyday for 6months' },
+    ];
+
+    const courseList = document.getElementById('courseList');
+
+    courses.forEach(course => {
+      const courseCard = document.createElement('div');
+      courseCard.classList.add('course-card');
+
+      const title = document.createElement('div');
+      title.classList.add('course-title');
+      title.textContent = course.title;
+
+      const duration = document.createElement('div');
+      duration.classList.add('course-duration');
+      duration.textContent = `Duration: ${course.duration}`;
+
+      courseCard.appendChild(title);
+      courseCard.appendChild(duration);
+
+      courseList.appendChild(courseCard);
+    });
+  </script>
+</body>
+</html>

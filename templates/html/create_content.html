@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tutor Course Creation</title>
+  <style>
+    /* Style the input fields and button */
+    input, textarea, button {
+      display: block;
+      margin-bottom: 40px;
+    }
+
+    h1 {
+      color: #007bff
+    }
+
+  </style>
+</head>
+<body>
+  <h1>Tutor Course Creation</h1>
+
+  <!-- Course Creation Form -->
+  <form id="course-form">
+    <input type="text" id="course-title" placeholder="Course Title" required>
+    <textarea id="course-description" placeholder="Course Description" required></textarea>
+    <textarea id="course-content" placeholder="Course Content" required></textarea>
+    <button type="submit">Create</button>
+  </form>
+
+  <script>
+    // Function to handle course creation
+    function createCourse(event) {
+      event.preventDefault();
+
+      // Get input values
+      const title = document.getElementById('course-title').value;
+      const description = document.getElementById('course-description').value;
+      const content = document.getElementById('course-content').value;
+
+      // Retrieve existing courses from local storage or initialize an empty array
+      const courses = JSON.parse(localStorage.getItem('courses')) || [];
+
+      // Create a new course object
+      const newCourse = {
+        title: title,
+        description: description,
+        content: content
+      };
+
+      // Add the new course to the array
+      courses.push(newCourse);
+
+      // Store the updated courses array in local storage
+      localStorage.setItem('courses', JSON.stringify(courses));
+
+      // Reset form fields
+      document.getElementById('course-form').reset();
+
+      // Redirect to the tutor's dashboard
+      window.location.href = 'tutor_dashboard.html';
+    }
+
+    // Add event listener to the course creation form
+    const courseForm = document.getElementById('course-form');
+    courseForm.addEventListener('submit', createCourse);
+  </script>
+</body>
+</html>

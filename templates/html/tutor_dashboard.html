@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tutor Dashboard</title>
+  <style>
+    /* Style the course containers */
+    .course-container {
+      border: 1px solid #f3f0f0;
+      padding: 10px;
+      margin-bottom: 10px;
+      background-color: #1961ad;
+      color:#f2f2f2;
+    }
+
+    /* Global Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url("");
+      background-size: cover;
+      background-position: center;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px
+    }
+    
+    /* Header */
+    .header {
+      background-color: #22364e;
+      color: #fff;
+      padding: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo img {
+      max-height: 60px;
+      float: left;
+    }
+    
+    .menu li {
+      display: inline-block;
+      margin-right: 20px;
+    }
+    
+    .menu li a {
+      color: #fff;
+      text-decoration: none;
+    }
+    
+    .user-options a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 20px;
+    }
+    
+    .logout-button {
+      background-color: transparent;
+      color: #fff;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      text-align: right;
+      text-decoration: wavy;
+      padding: 5px 20px;
+      background-color: #ff4d4d;
+      border-radius: 5px;
+      box-shadow: black;
+      float: right;
+    }
+    .logout-button:hover{
+      background-color: #22364e;
+    }
+    /* Dashboard Section */
+    .dashboard {
+      background-color: #f2f2f2;
+      padding: 50px 0;
+      text-align: center;
+    }
+    
+    .sidebar {
+      background-color: #22364e;
+      color: #fff;
+      width: 150px;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      padding: 20px;
+      overflow-y: auto;
+    }
+    
+    .toggle-menu {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      margin-bottom: 20px;
+    }
+    
+    .menu-icon {
+      width: 30px;
+      height: 3px;
+      background-color: #fff;
+      margin-bottom: 5px;
+    }
+    
+    .sidebar-menu {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .sidebar-menu li {
+      margin-bottom: 10px;
+    }
+    
+    .sidebar-menu li a {
+      color: #fff;
+      text-decoration: none;
+    }
+    
+    .content {
+      margin-left: 270px;
+    }
+    
+    .search-bar {
+      margin-bottom: 20px;
+    }
+    
+    .search-bar input[type="text"] {
+      padding: 10px;
+      width: 400px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    
+    .search-button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .search-button:hover{
+      background-color: #22364e;
+    }
+    .section-heading {
+      margin-bottom: 20px;
+      text-align: left;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      font-size: large;
+      color: #ee1111;
+    }
+    
+    .tutor-section {
+      margin-bottom: 40px;
+    }
+    h1 {
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color:#22364e;
+    }
+    .tutor-options {
+      display: flex;
+      justify-content: left;
+      align-items: left;
+    }
+    .tutor-option:hover{
+      background-color: #22364e;
+    }
+    .tutor-option {
+      display: inline-block;
+      padding: 10px 20px;
+      margin-right: 20px;
+      background-color: #007bff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    
+    .course-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    
+    .course {
+      flex-basis: 90%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    
+    .course .course-details {
+      flex-grow: 1;
+      text-align: left;
+    }
+    
+    .course-title {
+      margin-top: 0;
+      font-size: medium;
+    }
+    
+    .course-description {
+      margin-bottom: 10px;
+    }
+    
+    .course-info {
+      font-size: 14px;
+      color: #666;
+    }
+    
+    .course-link {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    
+    .course-link:hover{
+      background-color: #22364e;
+    }
+    /* Footer */
+    .footer {
+      background-color: #22364e;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <img src="images/learnhub_logo.png" alt="Company Logo">
+        
+      </div>
+      
+    </div>
+  </header>
+  
+  <section class="dashboard">
+    <div class="container">
+      <div class="sidebar">
+        <div class="toggle-menu">
+          <span class="menu-icon"></span>
+          <span class="menu-icon"></span>
+          <span class="menu-icon"></span>
+        </div>
+        <ul class="sidebar-menu">
+          <li><a href="http://127.0.0.1:5000/home.html">Home</a></li>
+          <li><a href="http://127.0.0.1:5000/view_courses.html">Courses</a></li>
+          <li><a href="https://www.brightannica.com.au/index.php/top-5-favourite-courses.html">Favorite</a></li>
+          <li><a href="https://www.memonotepad.com/">Notes</a></li>
+          <li><a href="http://127.0.0.1:5000/tutors.html">Teachers</a></li>
+          <li><a href="#">Settings</a></li>
+        </ul>
+      </div>
+      
+      <div class="content">
+        <a href="http://127.0.0.1:5000/login.html" class="logout-button">Logout</a>
+        <div class="search-bar">
+          <input type="text" placeholder="Search for courses...">
+          <button class="search-button">Search</button>
+        </div>
+        
+        <div class="tutor-section">
+          <h2 class="section-heading"> Welcome Tutor</h2>
+          <div class="tutor-options">
+            <a href="http://127.0.0.1:5000/create_content.html" class="tutor-option">Create Course</a>
+            <a href="http://127.0.0.1:5000/manage_content.html" class="tutor-option">Manage Content</a>
+            <a href="http://127.0.0.1:5000/video.html" class="tutor-option">Start Live Session</a>
+          </div>
+        </div>
+        <h1>Currently Created Courses</h1>
+
+  <!-- Container for other created courses -->
+  <div id="dashboard-container"></div>
+        <h2 class="section-heading">Free Courses To Teach</h2>
+        <div class="course-list">
+          <div class="course">
+            <div class="course-details">
+              <h3 class="course-title">Human Life And Safety Measures</h3>
+              <p class="course-description">Human health or safety means the physical health or safety of individual human beings. The term does not encompass economic, aesthetic, or social values or the health of ecosystems.</p>
+              <p class="course-info">
+                Date: <span class="course-date">June 1, 2023</span>
+                Time: <span class="course-time">10:00 AM - 12:00 PM. (Everyday)</span>
+                Duration: <span class="course-duration">1 Months</span>
+              </p>
+            </div>
+            <a href="https://www.jstor.org/stable/1804944" class="course-link">Materials</a>
+          </div>
+          <div class="course">
+            <div class="course-details">
+              <h3 class="course-title">HealthCare</h3>
+              <p class="course-description">Health is a positive concept emphasizing social and personal resources, as well as physical capacities.</p>
+              <p class="course-info">
+                Date: <span class="course-date">June 15, 2023</span>
+                Time: <span class="course-time">3:00 PM - 5:00 PM. (Everyday)</span>
+                Duration: <span class="course-duration">2 Months</span>
+              </p>
+            </div>
+            <a href="https://www.who.int/health-topics" class="course-link">Materials</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2023 LearnHub. All rights reserved.</p>
+    </div>
+  </footer>
+  
+  <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+
+  <script>
+    // Retrieve courses from local storage
+    const courses = JSON.parse(localStorage.getItem('courses')) || [];
+
+    // Iterate over the courses and display them in the dashboard
+    const dashboardContainer = document.getElementById('dashboard-container');
+    courses.forEach(function(course) {
+      // Create course container
+      const courseContainer = document.createElement('div');
+      courseContainer.classList.add('course-container');
+
+      // Create course elements
+      const courseTitle = document.createElement('h3');
+      courseTitle.textContent = course.title;
+
+      const courseDescription = document.createElement('p');
+      courseDescription.textContent = course.description;
+
+      // Append course elements to the container
+      courseContainer.appendChild(courseTitle);
+      courseContainer.appendChild(courseDescription);
+
+      // Append the container to the tutor's dashboard
+      dashboardContainer.appendChild(courseContainer);
+    });
+  </script>
+</body>
+</html>
