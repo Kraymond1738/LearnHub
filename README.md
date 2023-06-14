@@ -39,9 +39,9 @@ The javascript front end and the way the dashboard was designed, allowed learnHu
 A REST API allowed for this frontend to interact with the backend in a simple and well documented way.
 We decided to use ORM and MySQL because of modularity and familiarity.
 
-Front End
+FrontEnd
 * Javascript components
-* CSS for consistent styling
+* HTML/CSS for consistent styling
 * API Calls to manipulate database
 
 REST API
@@ -54,7 +54,7 @@ Relational Database
 
 Server / Deployment
 * Nginx / Gunicorn / Flask
-* AWS EC2 on Ubuntu 20.04
+* Ubuntu 20.04
 
 ## Getting Started
 
