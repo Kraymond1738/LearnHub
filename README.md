@@ -77,13 +77,13 @@ LearnHub has features that can be found through our dropdown navigation bar menu
 
 These features will be explored below!
 
-<img width=50% src="/static/images/Screenshot_2.png">
+<img width=50% src="/static/images/Screenshot_2.jpg">
 
 ### **Tutor Dashboard**
 
 When a Tutor creates an account and log's in with the tutor account type, The tutor has the features of creating a content, managing the content and also starting a live session.
 
-<img width=50% src="Screenshot (6).png">
+<img width=50% src="/static/images/Screenshot (6).png">
 
 ### **Student Dashboard**
 
