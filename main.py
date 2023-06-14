@@ -89,7 +89,13 @@ def login():
         if user and check_password_hash(user.password, password):
             # User is authenticated, store user ID in the session
             session['user_id'] = user.id
-            return redirect('/dashboard')
+            
+            #check the account type
+            acc_type = user.account_type
+            if acc_type== 'Tutor':
+                return redirect('/tutor_dashboard')
+            else:
+                return redirect('/student_dashboard')
         else:
             # Invalid credentials, display an error message
             #error_message = 'Invalid email or password'
@@ -104,10 +110,11 @@ def logout():
     session.pop('user_id', None)
     return redirect('/login')
 
-# Other routes and views
 
-@app.route('/dashboard')
-def dashboard():
+#dashboard routes
+
+@app.route('/tutor_dashboard')
+def tutor_dashboard():
     # Check if the user is logged in
     if 'user_id' not in session:
         return redirect('/login')
@@ -115,7 +122,48 @@ def dashboard():
     # Retrieve the user from the database
     user = User.query.get(session['user_id'])
 
-    return render_template('html/dashboard.html', user=user)
+    return render_template('html/tutor_dashboard.html', user=user)
+
+@app.route('/student_dashboard')
+def student_dashboard():
+    # Check if the user is logged in
+    if 'user_id' not in session:
+        return redirect('/login')
+
+    # Retrieve the user from the database
+    user = User.query.get(session['user_id'])
+
+    return render_template('html/student_dashboard.html', user=user)
+
+#tutors page
+@app.route('/tutors')
+def tutors():
+    return render_template('html/tutors.html')
+
+#view_courses page
+@app.route('/view_courses')
+def view_courses():
+    return render_template('html/view_courses.html')
+
+#create_content page
+@app.route('/create_content')
+def create_content():
+    return render_template('html/create_content.html')
+
+#manage_content page
+@app.route('/manage_content')
+def manage_content():
+    return render_template('html/manage_content.html')
+
+#live_session page
+@app.route('/live_session')
+def live_session():
+    return render_template('html/video.html')
+
+#enrollment page
+@app.route('/enroll')
+def enroll():
+    return render_template('html/enroll.html')
 
 # Run the application
 if __name__ == '__main__':
