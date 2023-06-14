@@ -93,6 +93,7 @@ The Student dashboard webpage allows a student the featured ability to view cour
 
 <img width=75% src="/static/images/Screenshot (20).png">
 
+### **Tutors**
 
 This page gives a view of all our distinguished and prestigious tutors
 
@@ -103,7 +104,7 @@ This page gives a view of all our distinguished and prestigious tutors
 
 Upon successful completion of a certificate program, learners receive a recognized certificate, showcasing their newly acquired skills and knowledge. This certification from LearnHub serves as a valuable credential, validating one's expertise to employers and professional networks.Overall, LearnHub's certificate programs offer a convenient and reputable way to upskill or reskill, empowering individuals to thrive in today's rapidly evolving job market.
 
-<img width=75% src="/Screenshot (24).png">
+<img width=75% src="/static/images/Screenshot (24).png">
 
 ## Built With
 * [Python](http://www.python.org) - The Backend Language
