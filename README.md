@@ -6,7 +6,7 @@
 
 [LearnHub](https://kriztech.github.io) is an innovative course provider app that offers a wide range of educational programs to enhance your knowledge and skills.
 With a userinterface, LearnHub provides interactive courses, expert instructors, webinars and personalized learning paths.
-Whether you are interested in professional development, academic subjects, or hobbies, LearnHub has something for everyone. LearnHub is an online platform that creates teaching and learning environments for users to engage and interact.
+Whether you are interested in professional development, academic subjects, or hobbies, LearnHub has something for everyone. LearnHub is an online platform that creates a teaching and learning environments for users to engage and interact.
 
 ## Table of content
 
@@ -30,7 +30,7 @@ Whether you are interested in professional development, academic subjects, or ho
 
 ## The Story
 
-First, We are passionate about fostering a love for learning and empowering individuals to reach their full potential. We believe that education should be accessible to everyone, which is why we offer a diverse range of online courses in various subjects and disciplines. Our platform is designed to provide a seamless learning experience, with interactive lessons, engaging content, and expert instructors. Whether you're looking to enhance your professional skills, explore new hobbies, or pursue academic interests, LearnHub is here to support you on your learning journey. Join our vibrant community of learners and embark on a path of continuous growth and discovery
+First, We are passionate about fostering a love for learning and empowering individuals to reach their full potential. We believe that education should be accessible to everyone, which is why we offer a diverse range of online courses in various subjects and disciplines. A lot of individuals out there, working-class, overaged, unprivileged, both disabled and handicaped are not opportuned to access a physical school. Our platform is designed to provide a seamless learning experience, with interactive lessons, engaging content, and expert instructors. Whether you're looking to enhance your professional skills, explore new hobbies, or pursue academic interests, LearnHub is here to support you on your learning journey. Join our vibrant community of learners and embark on a path of continuous growth and discovery
 
 That is why we are LearnHub!
 
@@ -42,10 +42,10 @@ We decided to use ORM and MySQL because of modularity and familiarity.
 FrontEnd
 * Javascript components
 * HTML/CSS for consistent styling
-* API Calls to manipulate database
+* Calls to manipulate database
 
 REST API
-* GET, POST, PUT requests handled
+* GET, POST, PUT requests handled.
 
 Relational Database
 * Handled with ORM (SQLAlchemy)
