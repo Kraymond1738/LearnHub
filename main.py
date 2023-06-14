@@ -146,7 +146,7 @@ def view_courses():
     return render_template('html/view_courses.html')
 
 #create_content page
-@app.route('/create_content')
+@app.route('/create_content', methods=['GET', 'POST'])
 def create_content():
     return render_template('html/create_content.html')
 
