@@ -104,6 +104,8 @@ This page gives a view of all our distinguished and prestigious tutors
 
 Upon successful completion of a certificate program, learners receive a recognized certificate, showcasing their newly acquired skills and knowledge. This certification from LearnHub serves as a valuable credential, validating one's expertise to employers and professional networks.Overall, LearnHub's certificate programs offer a convenient and reputable way to upskill or reskill, empowering individuals to thrive in today's rapidly evolving job market.
 
+<img width=75% src="/static/images/Screenshot (11).png">
+
 <img width=75% src="/static/images/Screenshot (24).png">
 
 ## Built With
@@ -142,9 +144,10 @@ Christian (KrizTech) is a Frontend software engineer, working on the system desi
 Kazumba is a backend software engineer, working on the system backend, database, and REST API for the most part with some fingerprints in the frontend in order to better understand and integrate the backend into the whole picture.
 
 ### **Afolabi Seyi**
-
-Afolabi is a frontend software Engineer, works on the design and writeups computation.Passionate about the physical appearance of the site and engagement of the user with the interface.
 [Afolabi](https://Afooseyi.github.io)
+
+Afolabi is a frontend software Engineer, works on the design and writeups computation. He is also passionate about the physical appearance of the site and engagement of the user with the interface.
+
 If you would like to contact [Kazumba](https://Kraymond1738.github.io/) or [Chris](https://KrizTech.github.io) or [Afolabi](https://Afooseyi.github.io/) about any opportunities, feel free to reach out!
 
 
