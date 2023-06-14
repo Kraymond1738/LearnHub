@@ -18,6 +18,7 @@ Whether you are interested in professional development, academic subjects, or ho
     - [Tutor Dashboard](#Tutor-Dashboard)
     - [Student Dashboard](#Student-Dashboard)
     - [Tutors](#Tutors)
+    - [Courses](#Courses)
     - [Rewards](#rewards)
 - [Built With](#built-with)
 - [API](#api)
@@ -43,6 +44,7 @@ FrontEnd
 * Javascript components
 * HTML/CSS for consistent styling
 * Calls to manipulate database
+
 
 REST API
 * GET, POST, PUT requests handled.
@@ -99,6 +101,11 @@ This page gives a view of all our distinguished and prestigious tutors
 
 <img width=75% src="/static/images/Screenshot (4).png">
 
+### **Courses**
+
+This section shows the list of courses available in cart.
+
+<img width=75% src="/static/images/Screenshot (25).png">
 
 ### **Rewards**
 
@@ -124,6 +131,12 @@ Upon successful completion of a certificate program, learners receive a recogniz
 
 GET: Returns a user email
 POST: Adds a user email
+
+<img width=50% src="/static/images/Screenshot (15).png">
+
+<img width=50% src="/static/images/Screenshot (16).png">
+
+
 
 ## Future
 
