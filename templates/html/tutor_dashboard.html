@@ -292,6 +292,7 @@
         <h1>Currently Created Courses</h1>
 
   <!-- Container for other created courses -->
+  <div id='user-name'></div>
   <div id="dashboard-container"></div>
         <h2 class="section-heading">Free Courses To Teach</h2>
         <div class="course-list">
@@ -331,9 +332,8 @@
   </footer>
   
   <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
-  <script src="script.js"></script>
 
-  <script>
+  <!--<script>
     // Retrieve courses from local storage
     const courses = JSON.parse(localStorage.getItem('courses')) || [];
 
@@ -358,6 +358,33 @@
       // Append the container to the tutor's dashboard
       dashboardContainer.appendChild(courseContainer);
     });
-  </script>
+  </script> -->
+
+<script>
+  // Retrieve user data from the server
+  fetch('/tutor_dashboard')
+    .then(response => response.json())
+    .then(data => {
+      // Display the user name on the page
+      //const userName = document.getElementById('user-name');
+      //userName.textContent = `Welcome, ${data.user.first_name} ${data.user.last_name}`;
+
+      // Display the course data on the page
+      const courseList = document.getElementById('dashboard-container');
+      data.courses.forEach(course => {
+        const courseElement = document.createElement('div');
+        courseElement.innerHTML = `
+          <h3>${course.title}</h3>
+          <p>${course.description}</p>
+          <p>${course.course_content}</p>
+        `;
+        courseList.appendChild(courseElement);
+      });
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+</script>
+
 </body>
 </html>

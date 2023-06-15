@@ -4,6 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 from engine.database import Course, Lesson, Comment, Discussion, VideoMeeting
 from engine.database import db
 from engine.database import User
+from flask import jsonify
 
 
 """
@@ -34,6 +35,12 @@ def add_user(user):
     db.session.add(user)
     db.session.commit()
 
+def add_course(course: Course):
+    """
+    Add new course
+    """
+    db.session.add(course)
+    db.session.commit()
 
 def update_video_meeting(video_meeting_id):
     """

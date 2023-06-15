@@ -4,8 +4,9 @@ from flask import Flask, render_template, request, redirect, session, flash
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 from engine.db_config import SQLALCHEMY_DATABASE_URI
-from engine.db_mod import add_user
+from engine.db_mod import *
 from engine.database import db, User
+import json
 
 
 app = Flask(__name__, static_url_path='/static', static_folder='static')
@@ -113,7 +114,7 @@ def logout():
 
 #dashboard routes
 
-@app.route('/tutor_dashboard')
+@app.route('/tutor_dashboard', methods=['GET'])
 def tutor_dashboard():
     # Check if the user is logged in
     if 'user_id' not in session:
@@ -122,7 +123,19 @@ def tutor_dashboard():
     # Retrieve the user from the database
     user = User.query.get(session['user_id'])
 
-    return render_template('html/tutor_dashboard.html', user=user)
+    courses = Course.query.filter_by(tutor_id=user.id).all()
+    
+    serialized_courses = []
+    for course in courses:
+        course_data = {
+            'title': course.title,
+            'description': course.description,
+            'course_content': course.course_content,
+        }
+        serialized_courses.append(course_data)
+    print(serialized_courses)
+    return render_template('html/tutor_dashboard.html', user=user.first_name,
+                            courses=json.dumps(serialized_courses))
 
 @app.route('/student_dashboard')
 def student_dashboard():
@@ -148,6 +161,21 @@ def view_courses():
 #create_content page
 @app.route('/create_content', methods=['GET', 'POST'])
 def create_content():
+    if request.method=='POST':
+        title = request.form.get('course_title')
+        description = request.form.get('course_description')
+        course_content = request.form.get('course_content')
+        
+        tutor_id = session['user_id']
+
+        #create a new course object
+
+        new_course = Course(title=title, description=description,
+                        course_content=course_content,tutor_id=tutor_id)
+
+        add_course(new_course)
+        return redirect('tutor_dashboard')
+    
     return render_template('html/create_content.html')
 
 #manage_content page
