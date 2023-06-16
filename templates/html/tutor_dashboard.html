@@ -250,13 +250,17 @@
     <div class="container">
       <div class="logo">
         <img src="static/images/learnhub_logo.png" alt="Company Logo">
-        
-      </div>
-      
+      </div>  
+    </div>
+    <div id='user-name'>
+    <p style="text-align: left;">Welcome {{user}} </p>
     </div>
   </header>
   
   <section class="dashboard">
+    <div id='user-name'>
+    <p style="text-align: left;">Welcome {{user}} </p>
+    </div>
     <div class="container">
       <div class="sidebar">
         <div class="toggle-menu">
@@ -289,11 +293,17 @@
             <a href="http://127.0.0.1:5000/live_session" class="tutor-option">Start Live Session</a>
           </div>
         </div>
-        <h1>Currently Created Courses</h1>
+        <h1 style="text-align: center;">Currently Created Courses</h1>
 
   <!-- Container for other created courses -->
-  <div id='user-name'></div>
-  <div id="dashboard-container"></div>
+  
+  <div id="dashboard-container" style="text-align: center;">
+  <ul>
+  {% for course in courses %}
+    <ul><h2>{{ course.title }}</h2><p>{{ course.description }}</p></ul>
+  {% endfor %}
+  </ul>
+</div>
         <h2 class="section-heading">Free Courses To Teach</h2>
         <div class="course-list">
           <div class="course">
@@ -333,7 +343,7 @@
   
   <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
 
-  <!--<script>
+  <!--script>
     // Retrieve courses from local storage
     const courses = JSON.parse(localStorage.getItem('courses')) || [];
 
@@ -358,33 +368,7 @@
       // Append the container to the tutor's dashboard
       dashboardContainer.appendChild(courseContainer);
     });
-  </script> -->
-
-<script>
-  // Retrieve user data from the server
-  fetch('/tutor_dashboard')
-    .then(response => response.json())
-    .then(data => {
-      // Display the user name on the page
-      //const userName = document.getElementById('user-name');
-      //userName.textContent = `Welcome, ${data.user.first_name} ${data.user.last_name}`;
-
-      // Display the course data on the page
-      const courseList = document.getElementById('dashboard-container');
-      data.courses.forEach(course => {
-        const courseElement = document.createElement('div');
-        courseElement.innerHTML = `
-          <h3>${course.title}</h3>
-          <p>${course.description}</p>
-          <p>${course.course_content}</p>
-        `;
-        courseList.appendChild(courseElement);
-      });
-    })
-    .catch(error => {
-      console.error('Error:', error);
-    });
-</script>
+  </script-->
 
 </body>
 </html>

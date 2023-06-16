@@ -124,18 +124,16 @@ def tutor_dashboard():
     user = User.query.get(session['user_id'])
 
     courses = Course.query.filter_by(tutor_id=user.id).all()
-    
-    serialized_courses = []
+    dict_courses = []
     for course in courses:
         course_data = {
             'title': course.title,
             'description': course.description,
             'course_content': course.course_content,
         }
-        serialized_courses.append(course_data)
-    print(serialized_courses)
-    return render_template('html/tutor_dashboard.html', user=user.first_name,
-                            courses=json.dumps(serialized_courses))
+        dict_courses.append(course_data)
+
+    return render_template('html/tutor_dashboard.html', user=user.first_name, courses=dict_courses)
 
 @app.route('/student_dashboard')
 def student_dashboard():
@@ -145,8 +143,7 @@ def student_dashboard():
 
     # Retrieve the user from the database
     user = User.query.get(session['user_id'])
-
-    return render_template('html/student_dashboard.html', user=user)
+    return render_template('html/student_dashboard.html', user=user.first_name)
 
 #tutors page
 @app.route('/tutors')
