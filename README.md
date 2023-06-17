@@ -25,7 +25,7 @@ Whether you are interested in professional development, academic subjects, or ho
 - [Future](#future)
 - [Authors](#authors)
     - [Christian Donatus](#KrizTech)
-    - [Kazumba Raymond](#Kraymond)
+    - [Kasumba Raymond](#Kraymond)
     - [Afolabi Seyi](#Afooseyi)
 - [Acknowledgments](#acknowledgements)
 
