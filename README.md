@@ -151,8 +151,8 @@ If you have any suggestions or would like to contribute to LearnHub, please cont
 
 Christian (KrizTech) is a Frontend software engineer, working on the system design, interface, technical writing and taking charge of the styling and javascript portion of LearnHub while still partially involved in the backend database and debugging of bugs.
 
-### **Kazumba Raymond**
-[Kazumba](https://Kraymond1738.github.io)
+### **Kasumba Raymond**
+[Kasumba](https://Kraymond1738.github.io)
 
 Kazumba is a backend software engineer, working on the system backend, database, and REST API for the most part with some fingerprints in the frontend in order to better understand and integrate the backend into the whole picture.
 
