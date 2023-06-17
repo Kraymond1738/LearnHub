@@ -101,11 +101,11 @@
 
         <h2>Create an Account</h2>
 
-        <form id="signupForm" action="http://127.0.0.1:5000/signup" method="POST">
+        <form id="signupForm" action="http://127.0.0.1:5000/signup" method="POST" onsubmit="return validateForm()">
             <input type="text" name="first_name" placeholder="First Name" required>
             <input type="text" name="last_name" placeholder="Last Name" required>
             <input type="email" name="email" placeholder="Email Address" required>
-            <input type="password" name="password" placeholder="Password" required>
+            <input type="password" name="password" id="password" placeholder="Password" required>
             <input type="tel" name="phone_number" placeholder="Phone Number" required>
             <select name="account_type" required>
                 <option value="">Account Type</option>
@@ -118,5 +118,30 @@
 
         <p class="message">Already have an account? <a href="http://127.00.1:5000/login" class="login-link">Login</a></p>
     </div>
+
+<script>
+  function validateForm() {
+    var password = document.getElementById("password").value;
+    var hasUppercase = /[A-Z]/.test(password);
+    var hasLowercase = /[a-z]/.test(password);
+    var hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+
+    if (password.length < 8) {
+      alert("Password should be at least 8 characters long");
+      return false;
+    }
+    
+    if (!hasUppercase || !hasLowercase) {
+      alert("Password should contain a mix of uppercase and lowercase letters");
+      return false;
+    }
+    
+    if (!hasSpecialChar) {
+      alert("Password should contain at least one special character");
+      return false;
+    }
+  }
+</script>
+
 </body>
 </html>

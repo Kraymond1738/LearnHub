@@ -176,9 +176,53 @@ def create_content():
     return render_template('html/create_content.html')
 
 #manage_content page
-@app.route('/manage_content')
+@app.route('/manage_content', methods=['GET', 'POST'])
 def manage_content():
-    return render_template('html/manage_content.html')
+    if request.method == 'POST':
+        action = request.form.get('action')
+        course_id = request.form.get('course_id')
+
+        if action == 'update':
+            title = request.form.get('title')
+            description = request.form.get('description')
+            course_content = request.form.get('course_content')
+
+            course = Course.query.get(course_id)
+            if course:
+                course.title = title
+                course.description = description
+                course.course_content = course_content
+                db.session.commit()
+
+        elif action == 'delete':
+            course = Course.query.get(course_id)
+            if course:
+                db.session.delete(course)
+                db.session.commit()
+
+        return redirect('/manage_content')
+
+    user = User.query.get(session['user_id'])
+    courses = Course.query.filter_by(tutor_id=user.id).all()
+
+    return render_template('html/manage_content.html', courses=courses)
+
+
+
+    user = User.query.get(session['user_id'])
+
+    courses = Course.query.filter_by(tutor_id=user.id).all()
+    dict_courses = []
+    for course in courses:
+        course_data = {
+            'course_id':course.id,
+            'title': course.title,
+            'description': course.description,
+            'course_content': course.course_content,
+        }
+        dict_courses.append(course_data)
+
+    return render_template('html/manage_content.html',courses=dict_courses)
 
 #live_session page
 @app.route('/live_session')
