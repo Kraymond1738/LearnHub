@@ -23,6 +23,7 @@ class Course(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     title = db.Column(db.String(100))
     description = db.Column(db.String(500))
+    course_content = db.Column(db.Text(16383))
     tutor_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     comments = db.relationship('Comment', backref='course', lazy=True)
     forum = db.relationship('Discussion', backref='course', lazy=True)

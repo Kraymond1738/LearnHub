@@ -13,19 +13,35 @@
       color: #007bff
     }
 
+    .logo img {
+      max-height: 60px;
+      float: left;
+    }
+
   </style>
+
+  <div class="container">
+      <div class="logo">
+        <a href="http://127.0.0.1:5000/tutor_dashboard" target="">
+        <img src="static/images/learnhub_logo.png" alt="Company Logo">
+        </a>
+      </div>
+      
+    </div>
 </head>
+<br><br><br>
 <body>
   <h1>Tutor Course Creation</h1>
 
   <!-- Course Creation Form -->
-  <form id="course-form">
-    <input type="text" id="course-title" placeholder="Course Title" required>
-    <textarea id="course-description" placeholder="Course Description" required></textarea>
-    <textarea id="course-content" placeholder="Course Content" required></textarea>
+  <form id="course-form" action='/create_content' method="POST">
+    <input type="text" id="course-title" name= course_title placeholder="Course Title" size="40" required>
+    <textarea id="course-description" name= course_description placeholder="Course Description" rows="10" cols="40" required></textarea>
+    <textarea id="course-content" name=course_content placeholder="Course Content" rows="10" cols="40" required></textarea>
     <button type="submit">Create</button>
   </form>
 
+<!---
   <script>
     // Function to handle course creation
     function createCourse(event) {
@@ -65,3 +81,4 @@
   </script>
 </body>
 </html>
+--->

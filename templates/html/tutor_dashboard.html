@@ -25,7 +25,7 @@
     .container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 20px
+      padding: 20px;
     }
     
     /* Header */
@@ -41,6 +41,7 @@
     .logo img {
       max-height: 60px;
       float: left;
+      margin-right: -300px;
     }
     
     .menu li {
@@ -168,6 +169,7 @@
     h1 {
       font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       color:#22364e;
+      margin-right: -60px;
     }
     .tutor-options {
       display: flex;
@@ -249,14 +251,16 @@
   <header class="header">
     <div class="container">
       <div class="logo">
-        <img src="images/learnhub_logo.png" alt="Company Logo">
-        
-      </div>
-      
+        <img src="static/images/learnhub_logo.png" alt="Company Logo">
+      </div>  
+    </div>
+    <div id='user-name'>
+    <p style="text-align: left;">Welcome {{user}} </p>
     </div>
   </header>
   
   <section class="dashboard">
+    
     <div class="container">
       <div class="sidebar">
         <div class="toggle-menu">
@@ -265,17 +269,17 @@
           <span class="menu-icon"></span>
         </div>
         <ul class="sidebar-menu">
-          <li><a href="http://127.0.0.1:5000/home.html">Home</a></li>
-          <li><a href="http://127.0.0.1:5000/view_courses.html">Courses</a></li>
+          <li><a href="http://127.0.0.1:5000/home">Home</a></li>
+          <li><a href="http://127.0.0.1:5000/view_courses">Courses</a></li>
           <li><a href="https://www.brightannica.com.au/index.php/top-5-favourite-courses.html">Favorite</a></li>
           <li><a href="https://www.memonotepad.com/">Notes</a></li>
-          <li><a href="http://127.0.0.1:5000/tutors.html">Teachers</a></li>
+          <li><a href="http://127.0.0.1:5000/tutors">Teachers</a></li>
           <li><a href="#">Settings</a></li>
         </ul>
       </div>
       
       <div class="content">
-        <a href="http://127.0.0.1:5000/login.html" class="logout-button">Logout</a>
+        <a href="http://127.0.0.1:5000/logout" class="logout-button">Logout</a>
         <div class="search-bar">
           <input type="text" placeholder="Search for courses...">
           <button class="search-button">Search</button>
@@ -284,15 +288,22 @@
         <div class="tutor-section">
           <h2 class="section-heading"> Welcome Tutor</h2>
           <div class="tutor-options">
-            <a href="http://127.0.0.1:5000/create_content.html" class="tutor-option">Create Course</a>
-            <a href="http://127.0.0.1:5000/manage_content.html" class="tutor-option">Manage Content</a>
-            <a href="http://127.0.0.1:5000/video.html" class="tutor-option">Start Live Session</a>
+            <a href="http://127.0.0.1:5000/create_content" class="tutor-option">Create Course</a>
+            <a href="http://127.0.0.1:5000/manage_content" class="tutor-option">Manage Content</a>
+            <a href="http://127.0.0.1:5000/live_session" class="tutor-option">Start Live Session</a>
           </div>
         </div>
-        <h1>Currently Created Courses</h1>
+        <h1 style="text-align: center;">Currently Created Courses</h1>
 
   <!-- Container for other created courses -->
-  <div id="dashboard-container"></div>
+  
+  <div id="dashboard-container" style="text-align: center;">
+  <ul>
+  {% for course in courses %}
+    <ul><h2>{{ course.title }}</h2><p>{{ course.description }}</p></ul>
+  {% endfor %}
+  </ul>
+</div>
         <h2 class="section-heading">Free Courses To Teach</h2>
         <div class="course-list">
           <div class="course">
@@ -331,9 +342,8 @@
   </footer>
   
   <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
-  <script src="script.js"></script>
 
-  <script>
+  <!--script>
     // Retrieve courses from local storage
     const courses = JSON.parse(localStorage.getItem('courses')) || [];
 
@@ -358,6 +368,7 @@
       // Append the container to the tutor's dashboard
       dashboardContainer.appendChild(courseContainer);
     });
-  </script>
+  </script-->
+
 </body>
 </html>

@@ -4,42 +4,42 @@ const tutors = [
         firstName: 'Sophie',
         lastName: 'Klean',
         courses: ['Sciences', 'Physiology'],
-        image: 'images/sophie.jpg',
+        image: '/static/images/sophie.jpg',
     },
     {
         id: 2,
         firstName: 'Jennifer',
         lastName: 'Morgan',
         courses: ['English', 'Spanish'],
-        image: 'images/single.jpg',
+        image: '/static/images/single.jpg',
     },
     {
         id: 3,
         firstName: 'Rich',
         lastName: 'Klark',
         courses:['Business Admin', 'Product Management'],
-        image: 'images/white2.png',
+        image: '/static/images/white2.png',
     },
     {
         id: 4,
         firstName: 'Kriz',
         lastName: 'Don',
         courses:['Product Design', 'Technical Writing'],
-        image: 'images/tutor_1.png',
+        image: '/static/images/tutor_1.png',
     },
     {
         id: 5,
         firstName: 'Rachel',
         lastName: 'Steve',
         courses:['Cloud Computation', 'Data Integration'],
-        image: 'images/Test2.png',
+        image: '/static/images/Test2.png',
     },
     {
         id: 6,
         firstName: 'Afolabi',
         lastName: 'Seyi',
         courses:['Data Analysis', 'Product Management'],
-        image: 'images/teacher.jpg',
+        image: 'static/images/teacher.jpg',
     }
     // Add more tutors...
 ];

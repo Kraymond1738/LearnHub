@@ -28,6 +28,11 @@
       background-color: #f9f9f9;
     }
 
+    .logo img {
+      max-height: 60px;
+      float: left;
+    }
+
     .active {
       display: block;
     }
@@ -37,14 +42,52 @@
       margin-right: 5px;
     }
   </style>
+<div class="container">
+      <div class="logo">
+        <a href="http://127.0.0.1:5000/tutor_dashboard" target="">
+        <img src="static/images/learnhub_logo.png" alt="Company Logo">
+        </a>
+      </div>
+      
+    </div>
 </head>
+<br><br><br>
+
 <body>
   <h1>Tutor Dashboard</h1>
 
   <!-- Container for dynamically created courses -->
-  <div id="dashboard-container"></div>
+  <div id="dashboard-container">
+   <ul>
+  {% for course in courses %}
+    <ul>
+      <h2>{{ course.title }}</h2>
+      <p>{{ course.description }}</p>
+      <p>{{ course.course_content }}</p>
+      <form action="/manage_content" method="POST" class="delete-form">
+        <input type="hidden" name="action" value="delete">
+        <input type="hidden" name="course_id" value="{{ course.id }}">
+        <button type="submit">Delete</button>
+      </form>
+      <button class="edit-button">Edit</button>
+      <form class="edit-form" action="/manage_content" method="POST">
+        <input type="hidden" name="action" value="update">
+        <input type="hidden" name="course_id" value="{{ course.id }}">
+         <label for="title">Title:</label><br>
+        <input type="text" name="title" size="40" value="{{ course.title }}"><br><br>
+        <label for="description">Description:</label><br>
+        <textarea name="description" rows="10" cols="40">{{ course.description }}</textarea><br><br>
+        <label for="content">Content:</label><br>
+        <textarea name="course_content" rows="10" cols="40">{{ course.course_content }}</textarea><br>
+        <button type="submit">Save</button>
+      </form>
+    </ul>
+    <br><br>
+  {% endfor %}
+</ul>
+  </div><br><br>
 
-  <script>
+  <!--script>
     // Retrieve courses from local storage
     let courses = JSON.parse(localStorage.getItem('courses')) || [];
 
@@ -152,6 +195,6 @@
 
     // Call the renderDashboard function initially to display existing courses
     renderDashboard();
-  </script>
+  </script-->
 </body>
 </html>
