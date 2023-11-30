@@ -8,7 +8,7 @@
 With a userinterface, LearnHub provides interactive courses, expert instructors, webinars and personalized learning paths.
 Whether you are interested in professional development, academic subjects, or hobbies, LearnHub has something for everyone. LearnHub is an online platform that creates a teaching and learning environments for users to engage and interact.
 
-## Table of content
+## Table Of Content
 
 - [The Story](#the-story)
 - [Getting Started](#getting-started)
